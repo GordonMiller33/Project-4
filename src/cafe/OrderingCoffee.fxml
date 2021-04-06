@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="280.0" prefWidth="280.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane prefHeight="240.0" prefWidth="280.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="63.0" minHeight="2.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="241.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" selected="true" text="Short">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="coffeeSizes" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Tall" toggleGroup="$coffeeSizes" />
+                              <RadioButton mnemonicParsing="false" text="Grande" toggleGroup="$coffeeSizes" />
+                              <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="59.0" text="Venti" toggleGroup="$coffeeSizes" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="34.0" prefWidth="280.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="Add in options, + $0.20 each" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="47.0" prefWidth="280.0" GridPane.rowIndex="2">
+                           <children>
+                              <CheckBox mnemonicParsing="false" text="Cream">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Syrup">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Milk">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <CheckBox mnemonicParsing="false" text="Caramel">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox mnemonicParsing="false" text="Whipped Cream">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                           <children>
+                              <Label layoutX="14.0" layoutY="29.0" text="Subtotal:" />
+                              <TextField fx:id="coffeeSubtotal" layoutY="46.0" />
+                              <Button fx:id="addCoffeeBtn" layoutX="191.0" layoutY="46.0" mnemonicParsing="false" text="Add to order" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="24.0" layoutY="10.0" prefHeight="36.0" prefWidth="249.0" text="Coffee Ordering Price starts a $1.99 for small. Add $0.50 for each size increase" wrapText="true" />
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
