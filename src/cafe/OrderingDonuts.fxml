@@ -29,7 +29,7 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <JComboBox fx:id="donutTypeComboBox" layoutX="3.0" layoutY="16.0" prefHeight="25.0" prefWidth="157.0" promptText="Choose donut type" />
+                        <ComboBox fx:id="donutTypeComboBox" layoutX="3.0" layoutY="16.0" prefHeight="25.0" prefWidth="157.0" promptText="Choose donut type" />
                         <Label layoutX="52.0" layoutY="95.0" text="Donut Flavors" />
                      </children>
                   </AnchorPane>
