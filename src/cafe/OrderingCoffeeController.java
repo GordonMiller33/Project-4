@@ -6,7 +6,6 @@ package cafe;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,6 +29,7 @@ public class OrderingCoffeeController {
 	private final static double GRANDECOST = 2.99;
 	private final static double VENTICOST = 3.49;
 	private final static double ADDINCOST = 0.2;
+	private Coffee tempCoffee;
 	
 	private final MainMenuController mainMenu;
 	
@@ -43,11 +43,12 @@ public class OrderingCoffeeController {
 	@FXML
 	private ToggleGroup coffeeSizes;
 	
-	@FXML
-	private CheckBox cream, syrup, milk, caramel, whippedCream;
+//	@FXML
+//	private CheckBox cream, syrup, milk, caramel, whippedCream;
 	
 	@FXML
-	private TextField coffeeSubtotal;
+	private TextField cream, syrup, milk, caramel, whippedCream, coffeeSubtotal;
+	
 
 	public OrderingCoffeeController(MainMenuController mainMenuController) {
 		this.mainMenu = mainMenuController;
@@ -72,7 +73,7 @@ public class OrderingCoffeeController {
 	}
 	
 	@FXML
-	void calculateCost() {
+	double calculateCost() {
 		double baseCost = 0;
 		String size = coffeeSizes.getSelectedToggle().toString();
 		if(size.equalsIgnoreCase("short"))
@@ -83,37 +84,55 @@ public class OrderingCoffeeController {
 			baseCost += GRANDECOST;
 		if(size.equalsIgnoreCase("venti"))
 			baseCost += VENTICOST;
-		List getAddIns = makeAddinList();
-		if(!getAddIns.isEmpty()) {
-			baseCost += (ADDINCOST * getAddIns.size());
-		}
+//		List getAddIns = makeAddinList();
+//		if(!getAddIns.isEmpty()) {
+			//baseCost += (ADDINCOST * getAddIns.size());
+		//}
 		
 		coffeeSubtotal.setText(Double.toString(baseCost));
+		return baseCost;
 	}
 	
+//	@FXML
+//	List makeAddinList() {
+//		List<String> addIns = new ArrayList<String>();
+//		if(cream.isSelected())
+//			addIns.add("cream");
+//		if(syrup.isSelected())
+//			addIns.add("syrup");
+//		if(milk.isSelected())
+//			addIns.add("milk");
+//		if(caramel.isSelected())
+//			addIns.add("caramel");
+//		if(whippedCream.isSelected())
+//			addIns.add("whipped cream");
+////		if(!cream.isPressed())
+////			addIns.remove("cream");
+//		return addIns;
+//		
+//	}
+	/**
+	 * The make coffee method creats a coffee object with the users entered information
+	 * cream, syrup, milk, caramel, whippedCream
+	 * String size, double cost, int numCream, int numSyrup, int numMilk, int numCaramel, int numWhippedCream
+	 */
 	@FXML
-	List makeAddinList() {
-		List<String> addIns = new ArrayList<String>();
-		if(cream.isSelected())
-			addIns.add("cream");
-		if(syrup.isSelected())
-			addIns.add("syrup");
-		if(milk.isSelected())
-			addIns.add("milk");
-		if(caramel.isSelected())
-			addIns.add("caramel");
-		if(whippedCream.isSelected())
-			addIns.add("whipped cream");
-//		if(!cream.isPressed())
-//			addIns.remove("cream");
-		return addIns;
-		
+	void makeCoffee() {
+		int numCream = Integer.valueOf(cream.getText());
+		int numSyrup = Integer.valueOf(syrup.getText());
+		int numMilk = Integer.valueOf(milk.getText());
+		int numCaramel = Integer.valueOf(caramel.getText());
+		int numWhippedCream = Integer.valueOf(whippedCream.getText());
+		String size = coffeeSizes.getSelectedToggle().toString();
+		double cost = calculateCost();
+		tempCoffee = new Coffee(size, cost, numCream, numSyrup, numMilk, numCaramel, numWhippedCream);
+		//addCoffeeOrder(tempCoffee);
 	}
 	
 	private void addCoffeeOrder() {
-		List getAddIns = makeAddinList();
-		System.out.println(getAddIns.toString());
-		mainMenu.addOrder("Coffee Added");
+		//List getAddIns = makeAddinList();
+		System.out.println("Add button pressed");
+		//mainMenu.addOrder("Coffee Added");
 		coffeeStage.hide();
 	}
 
