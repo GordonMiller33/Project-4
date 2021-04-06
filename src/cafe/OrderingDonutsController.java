@@ -5,7 +5,6 @@ package cafe;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -67,6 +66,7 @@ public class OrderingDonutsController {
 		placeDonutOrder.setOnAction(event -> addDonutOrder());
 		donutFlavorsView.getItems().addAll(donutFlavors);
 		donutTypeComboBox.getItems().addAll("Yeast", "Cake", "Mini dount");
+		donutTypeComboBox.getSelectionModel().selectFirst();
 	}
 	
 	public void setStage() {
@@ -85,7 +85,9 @@ public class OrderingDonutsController {
 	 */
 	@FXML
 	void addDonut() {
-		String donut = donutFlavorsView.getSelectionModel().getSelectedItem();
+		String donutFlavor = donutFlavorsView.getSelectionModel().getSelectedItem();
+		String donutType = donutTypeComboBox.getSelectionModel().getSelectedItem().toString();
+		String donut = donutType + donutFlavor;
 		curOrder.add(donut);
 		curOrderTextArea.setText(curOrder.toString());
 		
