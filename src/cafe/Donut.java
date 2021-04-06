@@ -11,6 +11,9 @@ public class Donut extends MenuItem implements Customizable{
 	private String type;
 	private double cost = 0.0;
 	private final static String DONUT = "Donut";
+	private final double YEASTPRICE = 1.39;
+	private final double CAKEPRICE = 1.59;
+	private final double MINIPRICE = 0.33;
 
 
 	Donut(String type, double cost) {
@@ -38,11 +41,11 @@ public class Donut extends MenuItem implements Customizable{
 	public double itemPrice() {
 		double findPrice = 0;
 		if(type.equals("Yeast"))
-			findPrice = 1.39;
+			findPrice = YEASTPRICE;
 		if(type.equals("Cake"))
-			findPrice = 1.59;
+			findPrice = CAKEPRICE;
 		if(type.equals("Mini Donut"))
-			findPrice = 0.33;
+			findPrice = MINIPRICE;
 		return findPrice;
 	}
 

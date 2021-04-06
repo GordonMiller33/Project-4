@@ -16,6 +16,10 @@ public class Coffee extends MenuItem implements Customizable{
 	private final static String COFFEE = "Coffee";
 	private final static double ADDINCOST = 0.20;
 	private final static int NOT_FOUND = -1;
+	private final static double SHORTCOST = 1.99;
+	private final static double TALLCOST = 2.49;
+	private final static double GRANDECOST = 2.99;
+	private final static double VENTICOST = 3.49;
 
 
 	Coffee(String size, double cost, int numCream, int numSyrup, int numMilk, int numCaramel, int numWhippedCream) {
@@ -84,16 +88,16 @@ public class Coffee extends MenuItem implements Customizable{
 	
 	private static double sizePrice(String size) {
 		if(size.equals("Short")) {
-			return 1.99;
+			return SHORTCOST;
 		}
 		else if(size.equals("Tall")) {
-			return 2.49;
+			return TALLCOST;
 		}
 		else if(size.equals("Grande")) {
-			return 2.99;
+			return GRANDECOST;
 		}
 		else {
-			return 3.49;
+			return VENTICOST;
 		}
 	}
 	
