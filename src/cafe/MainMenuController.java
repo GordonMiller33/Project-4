@@ -2,8 +2,6 @@ package cafe;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
-
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +21,8 @@ public class MainMenuController {
 	@FXML
 	private ObservableList<MenuItem> currentOrderList, storeOrdersList;
 	
-	private ArrayList<String> orders = new ArrayList<String>();
+	private ArrayList<Order> storeOrders = new ArrayList<Order>();
+	private ArrayList<Order> curOrder = new ArrayList<Order>();
 	
 	private final Stage mainStage;
 	
@@ -56,6 +55,8 @@ public class MainMenuController {
 	private void initialize() {
 		donutMenu.setOnAction(event -> showDonutMenu());
 		coffeeMenu.setOnAction(event -> showCoffeeMenu());
+		currentOrderBtn.setOnAction(event -> showCurOrderDetails());
+		storeOrdersBtn.setOnAction(event -> showStoreOrderDetails());
 	}
 	
 	private void showDonutMenu() {
@@ -66,6 +67,16 @@ public class MainMenuController {
 	private void showCoffeeMenu() {
 		OrderingCoffeeController coffeeController = new OrderingCoffeeController(this);
 		coffeeController.setStage();
+	}
+	
+	private void showCurOrderDetails() {
+		CurrentOrderDetailController curOrderController = new CurrentOrderDetailController(this);
+		curOrderController.setStage();
+	}
+	
+	private void showStoreOrderDetails() {
+		StoreOrdersController storeOrderController = new StoreOrdersController(this);
+		storeOrderController.setStage();
 	}
 	
 	/**
