@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package cafe;
 
@@ -12,11 +12,11 @@ import java.util.ArrayList;
  *
  */
 public class Order implements Customizable{
-	
+
 	private ArrayList<MenuItem> itemList = new ArrayList<MenuItem>();
-	
+
 	private int orderNumber;
-	
+
 
 	Order(int num) {
 		this.orderNumber = num;
@@ -36,7 +36,7 @@ public class Order implements Customizable{
 		itemList.remove((int)obj);
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		String output = "Order Number " + this.orderNumber + ":\n";
@@ -46,19 +46,19 @@ public class Order implements Customizable{
 		output+= ">total price: " + doubleToDollar(this.getTotal());
 		return output;
 	}
-	
+
 	public void setId(int id) {
 		this.orderNumber = id;
 	}
-	
+
 	public int size() {
 		return itemList.size();
 	}
-	
+
 	public MenuItem get(int index) {
 		return itemList.get(index);
 	}
-	
+
 	public double getTotal() {
 		double sum = 0;
 		for(int i=0;i<itemList.size();i++) {
@@ -66,7 +66,7 @@ public class Order implements Customizable{
 		}
 		return sum;
 	}
-	
+
 	private static String doubleToDollar(double value) {
 		if(value == 0) {
 			return "0.00";

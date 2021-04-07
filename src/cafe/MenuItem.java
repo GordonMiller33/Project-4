@@ -33,7 +33,11 @@ public class MenuItem {
 		String itemInfo = new String(description + " $" + Double.toString(cost));
 		return itemInfo;
 	}
-	
+	/**
+	 * This method will convert a double value into a formatted string
+	 * @param value the double to format
+	 * @return the formatted value
+	 */
 	protected static String doubleToDollar(double value) {
 		if(value == 0) {
 			return "0.00";

@@ -14,7 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
- * @author Me
+ * @author Matthew Schilling and Gordon Miller
  *
  */
 public class CurrentOrderDetailController {

@@ -78,13 +78,14 @@ public class OrderingCoffeeController {
 		coffeeStage.showAndWait();
 	}
 	/**
-	 * 
+	 * This method will determine the base cost of the coffee
 	 * @return
 	 */
 	@FXML
 	double calculateCost() {
 		double baseCost = 0;
-		String size = coffeeSizes.getSelectedToggle().toString();
+		RadioButton getSize = (RadioButton) coffeeSizes.getSelectedToggle();
+		String size = getSize.getText();
 		if(size.equalsIgnoreCase("short"))
 			baseCost += SHORTCOST;
 		if(size.equalsIgnoreCase("tall"))
@@ -110,13 +111,17 @@ public class OrderingCoffeeController {
 		int numMilk = Integer.valueOf(milk.getText());
 		int numCaramel = Integer.valueOf(caramel.getText());
 		int numWhippedCream = Integer.valueOf(whippedCream.getText());
-		String size = coffeeSizes.getSelectedToggle().toString();
+		RadioButton getSize = (RadioButton) coffeeSizes.getSelectedToggle();
+		String size = getSize.getText();
 		double cost = calculateCost();
 		tempCoffee = new Coffee(size, cost, numCream, numSyrup, numMilk, numCaramel, numWhippedCream);
 		mainMenu.addMenuItem(tempCoffee);
 		coffeeStage.hide();
 	}
 	
+	/**
+	 * The subtotal method will keep tracking of the current cost of items and display it
+	 */
 	@FXML
 	void subTotal() {
 		double subTotal = 0;

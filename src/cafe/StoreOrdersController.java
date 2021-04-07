@@ -10,20 +10,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-
+/**
+ *
+ * @author Matthew Schilling and Gordon Miller
+ *
+ */
 public class StoreOrdersController {
 private final MainMenuController mainMenu;
-	
+
 	private Stage storeOrderDetailStage;
 	@FXML
 	private Button exportBtn;
 	@FXML
 	private ListView storeOrderListView;
-	
+
 	public StoreOrdersController(MainMenuController mainMenu) {
 		this.mainMenu = mainMenu;
 		storeOrderDetailStage = new Stage();
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrders.fxml"));
 			loader.setController(this);
@@ -34,18 +38,18 @@ private final MainMenuController mainMenu;
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	@FXML
 	private void initialize() {
 		exportBtn.setOnAction(event -> export());
 	}
-	
+
 	public void setStage() {
 		storeOrderDetailStage.showAndWait();
 	}
-	
+
 	private void export() {
 		try {
             File exportData = new File("storedOrders.txt");
@@ -64,5 +68,3 @@ private final MainMenuController mainMenu;
         }
 	}
 }
-
-

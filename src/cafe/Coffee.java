@@ -22,6 +22,16 @@ public class Coffee extends MenuItem implements Customizable{
 	private final static double VENTICOST = 3.49;
 
 
+	/**
+	 * The coffee constructor creates menu items that represent different cups of coffee
+	 * @param size the coffee cup size
+	 * @param cost the cost of the coffee
+	 * @param numCream the number of creams the user ordered
+	 * @param numSyrup the number of syrup the user ordered
+	 * @param numMilk the number of milks the user ordered
+	 * @param numCaramel the number of caramel the user ordered
+	 * @param numWhippedCream the number of whipped cream the user ordered
+	 */
 	Coffee(String size, double cost, int numCream, int numSyrup, int numMilk, int numCaramel, int numWhippedCream) {
 		//cost = this.itemPrice();
 		super(COFFEE, cost);
@@ -86,7 +96,11 @@ public class Coffee extends MenuItem implements Customizable{
 		double findPrice = sizePrice(this.size) + (ADDINCOST * numAddIns);
 		return findPrice;
 	}
-	
+	/**
+	 * This method will sum an array
+	 * @param array the array to sum
+	 * @return the sum found
+	 */
 	private static int sum(int[] array) {
 		int sum = 0;
 		for(int i = 0; i< array.length; i++)
