@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
+
 public class MainMenuController {
 	private final static int CURRENT_ORDER = 0;
 	private int orderId = 0;
@@ -128,7 +129,10 @@ public class MainMenuController {
 	public Order getItemList() {
 		return curOrder;
 	}
-
+	
+	/**
+	 * Places the current order
+	 */
 	protected void placeOrder() {
 		orderId++;
 		curOrder.setId(orderId);

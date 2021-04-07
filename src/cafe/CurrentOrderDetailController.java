@@ -28,7 +28,11 @@ public class CurrentOrderDetailController {
 	private Button removeBtn, placeOrderBtn;
 	@FXML
 	private ListView curOrderListView;
-
+	
+	/**
+	 * Constructor which takes the main menu controller as a parameter
+	 * @param mainMenu the Main Menu Controller
+	 */
 	public CurrentOrderDetailController(MainMenuController mainMenu) {
 		this.mainMenu = mainMenu;
 		curOrderDetailStage = new Stage();

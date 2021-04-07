@@ -23,7 +23,8 @@ private final MainMenuController mainMenu;
 	private Button exportBtn;
 	@FXML
 	private ListView storeOrderListView;
-
+	
+	
 	public StoreOrdersController(MainMenuController mainMenu) {
 		this.mainMenu = mainMenu;
 		storeOrderDetailStage = new Stage();
@@ -41,15 +42,26 @@ private final MainMenuController mainMenu;
 
 	}
 
+	/**
+	 * THe add menu item method adds a coffee or donut(s) to the list of menu items
+	 * this list will become an order once the user finalizes
+	 * @param item the donut or coffee to be added.
+	 */
 	@FXML
 	private void initialize() {
 		exportBtn.setOnAction(event -> export());
 	}
 
+	/**
+	 * This method will show the store orders screen
+	 */
 	public void setStage() {
 		storeOrderDetailStage.showAndWait();
 	}
-
+	
+	/**
+	 * Exports stored orders to file
+	 */
 	private void export() {
 		try {
             File exportData = new File("storedOrders.txt");
