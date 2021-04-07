@@ -3,6 +3,7 @@
  */
 package cafe;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -38,10 +39,11 @@ public class Order implements Customizable{
 	
 	@Override
 	public String toString() {
-		String output = "";
+		String output = "Order Number " + this.orderNumber + ":\n";
 		for(int i=0;i<itemList.size();i++) {
-			output += itemList.get(i) + "\n";
+			output += ">" + itemList.get(i) + "\n";
 		}
+		output+= ">total price: " + doubleToDollar(this.getTotal());
 		return output;
 	}
 	
@@ -55,6 +57,25 @@ public class Order implements Customizable{
 	
 	public MenuItem get(int index) {
 		return itemList.get(index);
+	}
+	
+	public double getTotal() {
+		double sum = 0;
+		for(int i=0;i<itemList.size();i++) {
+			sum+=itemList.get(i).itemPrice();
+		}
+		return sum;
+	}
+	
+	private static String doubleToDollar(double value) {
+		if(value == 0) {
+			return "0.00";
+		}
+		DecimalFormat dollarFormatter = new DecimalFormat("#.00");
+    	dollarFormatter.setGroupingUsed(true);
+    	dollarFormatter.setGroupingSize(3);
+    	String valueStr = dollarFormatter.format(value);
+    	return valueStr;
 	}
 
 }

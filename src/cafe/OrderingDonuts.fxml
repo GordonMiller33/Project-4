@@ -54,7 +54,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Button fx:id="placeDonutOrder" layoutX="89.0" layoutY="71.0" mnemonicParsing="false" text="Place Order" />
+                        <Button fx:id="placeDonutOrder" layoutX="89.0" layoutY="71.0" mnemonicParsing="false" text="Add to Order" />
                         <TextField editable="false" layoutX="71.0" layoutY="33.0" prefHeight="25.0" prefWidth="57.0" />
                         <Label layoutX="14.0" layoutY="37.0" prefHeight="17.0" prefWidth="54.0" text="Subtotal:" />
                      </children>

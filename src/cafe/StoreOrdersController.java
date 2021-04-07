@@ -1,5 +1,7 @@
 package cafe;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
@@ -45,7 +47,22 @@ private final MainMenuController mainMenu;
 	}
 	
 	private void export() {
-		
+		try {
+            File exportData = new File("storedOrders.txt");
+            exportData.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            FileWriter writer = new FileWriter("storedOrders.txt");
+            for (int i = 0; i < mainMenu.storeOrders.size(); i++) {
+                writer.write(mainMenu.storeOrders.get(i).toString() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
-
 }
+
+
