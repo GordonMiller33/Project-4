@@ -18,7 +18,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <GridPane prefHeight="240.0" prefWidth="280.0">
+                  <GridPane fx:id="mainGrid" onMouseMoved="#subTotal" prefHeight="240.0" prefWidth="280.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -49,19 +49,19 @@
                         </HBox>
                         <HBox prefHeight="47.0" prefWidth="280.0" GridPane.rowIndex="2">
                            <children>
-                              <TextField fx:id="cream" prefHeight="25.0" prefWidth="29.0" />
+                              <TextField fx:id="cream" prefHeight="25.0" prefWidth="29.0" text="0" />
                               <Label text="Cream" />
-                              <TextField fx:id="syrup" prefHeight="25.0" prefWidth="29.0" />
+                              <TextField fx:id="syrup" prefHeight="25.0" prefWidth="29.0" text="0" />
                               <Label text="Syrup" />
-                              <TextField fx:id="milk" prefHeight="25.0" prefWidth="29.0" />
+                              <TextField fx:id="milk" prefHeight="25.0" prefWidth="29.0" text="0" />
                               <Label text="Milk" />
                            </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                            <children>
-                              <TextField fx:id="caramel" prefHeight="25.0" prefWidth="29.0" />
+                              <TextField fx:id="caramel" prefHeight="25.0" prefWidth="29.0" text="0" />
                               <Label text="Caramel" />
-                              <TextField fx:id="whippedCream" prefHeight="25.0" prefWidth="29.0" />
+                              <TextField fx:id="whippedCream" prefHeight="25.0" prefWidth="29.0" text="0" />
                               <Label text="Whipped Cream" />
                            </children>
                         </HBox>
