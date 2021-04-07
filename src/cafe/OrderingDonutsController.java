@@ -9,8 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -18,6 +20,9 @@ import javafx.stage.Stage;
  *
  */
 public class OrderingDonutsController {
+	
+	@FXML
+	private TextField numDonuts;
 	
 	@FXML
 	private ComboBox donutTypeComboBox;
@@ -67,6 +72,7 @@ public class OrderingDonutsController {
 		donutFlavorsView.getItems().addAll(donutFlavors);
 		donutTypeComboBox.getItems().addAll("Yeast", "Cake", "Mini Donut");
 		donutTypeComboBox.getSelectionModel().selectFirst();
+		numDonuts.setText("1");
 	}
 	/**
 	 * This method will show the donut ordering screen
@@ -80,7 +86,7 @@ public class OrderingDonutsController {
 	@FXML
 	void addDonutOrder() {
 		for(Donut donut : curOrder)
-			mainMenu.addMenuItem(donut);
+				mainMenu.addMenuItem(donut);
 		donutStage.hide();
 		//mainMenu.showStage();
 		
@@ -93,7 +99,8 @@ public class OrderingDonutsController {
 		String donutFlavor = donutFlavorsView.getSelectionModel().getSelectedItem();
 		String donutType = donutTypeComboBox.getSelectionModel().getSelectedItem().toString();
 		Donut donut = new Donut(donutFlavor, donutType, BASECOST);
-		curOrder.add(donut);
+		for(int i=0;i<Integer.parseInt(numDonuts.getText());i++)
+			curOrder.add(donut);
 		curOrderTextArea.setText(curOrder.toString());
 		
 	}
