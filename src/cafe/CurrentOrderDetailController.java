@@ -5,7 +5,6 @@ package cafe;
 
 import java.io.IOException;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
- * @author Matthew Schilling and Gordon Miller
+ * @author Me
  *
  */
 public class CurrentOrderDetailController {
@@ -24,7 +23,7 @@ public class CurrentOrderDetailController {
 	private Stage curOrderDetailStage;
 	
 	@FXML
-	private ObservableList<MenuItem> orderList;
+	private ObservableList<Order> orderList;
 	@FXML
 	private Button removeBtn, placeOrderBtn;
 	@FXML
@@ -38,18 +37,17 @@ public class CurrentOrderDetailController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrderDetail.fxml"));
 			loader.setController(this);
 			curOrderDetailStage.setScene(new Scene(loader.load()));
+			for(int i=0;i<mainMenu.curOrder.size();i++) {
+				curOrderListView.getItems().add(mainMenu.curOrder.get(i).toString());
+			}
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 	}
-	/**
-	 * This method sets up the necessary relationships when this screen is loaded.
-	 */
 	@FXML
 	private void initialize() {
 		removeBtn.setOnAction(event -> removeItem());
-		orderList = FXCollections.observableArrayList(mainMenu.getItemList());
 	}
 	
 	/**
@@ -59,6 +57,8 @@ public class CurrentOrderDetailController {
 		curOrderDetailStage.showAndWait();
 	}
 	private void removeItem() {
-		
+		int index = curOrderListView.getSelectionModel().getSelectedIndex();
+		mainMenu.curOrder.remove(index);
+		curOrderListView.getItems().remove(index);
 	}
 }

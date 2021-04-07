@@ -22,7 +22,7 @@ public class MainMenuController {
 	private ObservableList<MenuItem> currentOrderList, storeOrdersList;
 	
 	private ArrayList<Order> storeOrders = new ArrayList<Order>();
-	private ArrayList<MenuItem> curOrder = new ArrayList<MenuItem>();
+	protected ArrayList<MenuItem> curOrder = new ArrayList<MenuItem>();
 	private int orderNum = 1;
 	
 	private final Stage mainStage;
