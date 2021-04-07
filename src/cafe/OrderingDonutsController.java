@@ -17,7 +17,7 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
- * @author Me
+ * @author Matthew Schilling and Gordon Miller
  *
  */
 public class OrderingDonutsController {
@@ -81,7 +81,7 @@ public class OrderingDonutsController {
 	@FXML
 	void addDonutOrder() {
 		for(Donut donut : curOrder)
-		mainMenu.addMenuItem(null);
+			mainMenu.addMenuItem(donut);
 		donutStage.hide();
 		//mainMenu.showStage();
 		

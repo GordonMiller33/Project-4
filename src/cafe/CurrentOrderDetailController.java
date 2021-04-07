@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
@@ -22,6 +24,10 @@ public class CurrentOrderDetailController {
 	
 	@FXML
 	private ObservableList<Order> orderList;
+	@FXML
+	private Button removeBtn, placeOrderBtn;
+	@FXML
+	private ListView curOrderListView;
 	
 	public CurrentOrderDetailController(MainMenuController mainMenu) {
 		this.mainMenu = mainMenu;
@@ -36,11 +42,18 @@ public class CurrentOrderDetailController {
 		}
 		
 	}
+	@FXML
+	private void initialize() {
+		removeBtn.setOnAction(event -> removeItem());
+	}
 	
 	/**
 	 * The setStage method will display the order detail window
 	 */
 	public void setStage() {
 		curOrderDetailStage.showAndWait();
+	}
+	private void removeItem() {
+		
 	}
 }
