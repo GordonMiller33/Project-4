@@ -121,4 +121,7 @@ public class MainMenuController {
 	public void addMenuItem(MenuItem item) {
 		curOrder.add(item);
 	}
+	public ArrayList getItemList() {
+		return curOrder;
+	}
 	}

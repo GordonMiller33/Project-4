@@ -66,6 +66,7 @@ public class OrderingCoffeeController {
 	@FXML
 	private void initialize() {
 		addCoffeeBtn.setOnAction(event -> makeCoffee());
+		
 	}
 	
 	public void setStage() {

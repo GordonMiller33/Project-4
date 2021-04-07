@@ -5,6 +5,7 @@ package cafe;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +24,7 @@ public class CurrentOrderDetailController {
 	private Stage curOrderDetailStage;
 	
 	@FXML
-	private ObservableList<Order> orderList;
+	private ObservableList<MenuItem> orderList;
 	@FXML
 	private Button removeBtn, placeOrderBtn;
 	@FXML
@@ -45,6 +46,7 @@ public class CurrentOrderDetailController {
 	@FXML
 	private void initialize() {
 		removeBtn.setOnAction(event -> removeItem());
+		orderList = FXCollections.observableArrayList(mainMenu.getItemList());
 	}
 	
 	/**
