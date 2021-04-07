@@ -21,9 +21,11 @@ public class MainMenuController {
 	private ListView<String> userOrderView, allOrdersView;
 	
 	@FXML
-	private ObservableList<MenuItem> currentOrderList, storeOrdersList;
+	private ObservableList<MenuItem> currentOrderList;
+	@FXML
+	ObservableList<MenuItem> storeOrdersList;
 	
-	private ArrayList<Order> storeOrders = new ArrayList<Order>();
+	protected ArrayList<Order> storeOrders = new ArrayList<Order>();
 	protected Order curOrder = new Order(CURRENT_ORDER);
 	private int orderNum = 1;
 	
@@ -131,5 +133,6 @@ public class MainMenuController {
 		orderId++;
 		curOrder.setId(orderId);
 		storeOrders.add(curOrder);
+		curOrder = new Order(CURRENT_ORDER);
 	}
 }

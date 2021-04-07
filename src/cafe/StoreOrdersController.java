@@ -14,9 +14,9 @@ private final MainMenuController mainMenu;
 	
 	private Stage storeOrderDetailStage;
 	@FXML
-	private Button removeBtn, placeOrderBtn;
+	private Button exportBtn;
 	@FXML
-	private ListView curOrderListView;
+	private ListView storeOrderListView;
 	
 	public StoreOrdersController(MainMenuController mainMenu) {
 		this.mainMenu = mainMenu;
@@ -26,8 +26,8 @@ private final MainMenuController mainMenu;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrders.fxml"));
 			loader.setController(this);
 			storeOrderDetailStage.setScene(new Scene(loader.load()));
-			for(int i=0;i<mainMenu.curOrder.size();i++) {
-				curOrderListView.getItems().add(mainMenu.curOrder.get(i).toString());
+			for(int i=0;i<mainMenu.storeOrders.size();i++) {
+				storeOrderListView.getItems().add(mainMenu.storeOrders.get(i).toString());
 			}
 		}catch (IOException e) {
 			e.printStackTrace();
@@ -35,8 +35,17 @@ private final MainMenuController mainMenu;
 		
 	}
 	
+	@FXML
+	private void initialize() {
+		exportBtn.setOnAction(event -> export());
+	}
+	
 	public void setStage() {
 		storeOrderDetailStage.showAndWait();
+	}
+	
+	private void export() {
+		
 	}
 
 }

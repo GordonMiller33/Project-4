@@ -45,10 +45,11 @@ public class CurrentOrderDetailController {
 		}
 		
 	}
+	
 	@FXML
 	private void initialize() {
 		removeBtn.setOnAction(event -> removeItem());
-		placeOrderBtn.setOnAction(event -> mainMenu.placeOrder());
+		placeOrderBtn.setOnAction(event -> placeOrder());
 	}
 	
 	/**
@@ -61,5 +62,10 @@ public class CurrentOrderDetailController {
 		int index = curOrderListView.getSelectionModel().getSelectedIndex();
 		mainMenu.curOrder.remove(index);
 		curOrderListView.getItems().remove(index);
+	}
+	
+	private void placeOrder() {
+		mainMenu.placeOrder();
+		curOrderDetailStage.hide();
 	}
 }
