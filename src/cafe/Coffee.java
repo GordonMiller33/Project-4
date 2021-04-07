@@ -82,7 +82,9 @@ public class Coffee extends MenuItem implements Customizable{
 		String coffeeDetails = size + " " + COFFEE + " | ";
 		for(int i=0;i<5;i++){
 			if(addInAmounts[i]>0) {
-				coffeeDetails += ", " + addInAmounts[i] + "x " + ADDIN_NAMES[i];
+				if(i!=0)
+					coffeeDetails += ", ";
+				coffeeDetails += + addInAmounts[i] + "x " + ADDIN_NAMES[i];
 			}
 		}
 		coffeeDetails+= " | $" + doubleToDollar(this.itemPrice());

@@ -1,2 +1,6 @@
-Chocolate Yeast Donut | $1.39
-
+Order Number 1:
+>Chocolate Yeast Donut | $1.39
+>total price: 1.39
+Order Number 2:
+>Tall Coffee | , 2x Cream, 3x Syrup | $3.49
+>total price: 3.49

@@ -63,6 +63,7 @@ private final MainMenuController mainMenu;
                 writer.write(mainMenu.storeOrders.get(i).toString() + "\n");
             }
             writer.close();
+            storeOrderDetailStage.hide();
         } catch (IOException e) {
             e.printStackTrace();
         }
