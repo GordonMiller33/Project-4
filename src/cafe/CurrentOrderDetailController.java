@@ -48,6 +48,7 @@ public class CurrentOrderDetailController {
 	@FXML
 	private void initialize() {
 		removeBtn.setOnAction(event -> removeItem());
+		placeOrderBtn.setOnAction(event -> mainMenu.placeOrder());
 	}
 	
 	/**

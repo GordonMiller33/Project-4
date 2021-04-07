@@ -11,6 +11,8 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 public class MainMenuController {
+	private final static int CURRENT_ORDER = 0;
+	private int orderId = 0;
 	
 	@FXML
     private Button donutMenu, coffeeMenu, currentOrderBtn, storeOrdersBtn;
@@ -22,7 +24,7 @@ public class MainMenuController {
 	private ObservableList<MenuItem> currentOrderList, storeOrdersList;
 	
 	private ArrayList<Order> storeOrders = new ArrayList<Order>();
-	protected ArrayList<MenuItem> curOrder = new ArrayList<MenuItem>();
+	protected Order curOrder = new Order(CURRENT_ORDER);
 	private int orderNum = 1;
 	
 	private final Stage mainStage;
@@ -121,7 +123,13 @@ public class MainMenuController {
 	public void addMenuItem(MenuItem item) {
 		curOrder.add(item);
 	}
-	public ArrayList getItemList() {
+	public Order getItemList() {
 		return curOrder;
 	}
+
+	protected void placeOrder() {
+		orderId++;
+		curOrder.setId(orderId);
+		storeOrders.add(curOrder);
 	}
+}

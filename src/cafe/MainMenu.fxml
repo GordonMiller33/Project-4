@@ -43,7 +43,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="storeOrdersBtn" mnemonicParsing="false" onAction="#showStoreOrderDetails" text="Store Orders" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="storeOrdersBtn" mnemonicParsing="false" text="Store Orders" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Button fx:id="currentOrderBtn" mnemonicParsing="false" text="Your Order" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label contentDisplay="RIGHT" prefHeight="71.0" prefWidth="110.0" text="Welcome to RU Cafe!" textAlignment="CENTER" wrapText="true" />
                </children>

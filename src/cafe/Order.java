@@ -32,12 +32,8 @@ public class Order implements Customizable{
 
 	@Override
 	public boolean remove(Object obj) {
-		int itemIndex = itemList.indexOf((MenuItem)obj);
-		if(itemIndex != -1) {
-			itemList.remove(itemIndex);
-			return true;
-		}
-		return false;
+		itemList.remove((int)obj);
+		return true;
 	}
 	
 	@Override
@@ -47,6 +43,18 @@ public class Order implements Customizable{
 			output += itemList.get(i) + "\n";
 		}
 		return output;
+	}
+	
+	public void setId(int id) {
+		this.orderNumber = id;
+	}
+	
+	public int size() {
+		return itemList.size();
+	}
+	
+	public MenuItem get(int index) {
+		return itemList.get(index);
 	}
 
 }
