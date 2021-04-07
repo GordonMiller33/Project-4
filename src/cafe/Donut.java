@@ -9,17 +9,19 @@ package cafe;
  */
 public class Donut extends MenuItem implements Customizable{
 	private String type;
-	private double cost = 0.0;
+	private String flavor;
+	//private double cost = 0.0;
 	private final static String DONUT = "Donut";
 	private final double YEASTPRICE = 1.39;
 	private final double CAKEPRICE = 1.59;
 	private final double MINIPRICE = 0.33;
 
 
-	Donut(String type, double cost) {
+	Donut(String flavor, String type, double cost) {
 		//cost = this.itemPrice();
 		super(DONUT, cost);
 		this.type = type;
+		this.flavor = flavor;
 	}
 
 	@Override
@@ -34,7 +36,7 @@ public class Donut extends MenuItem implements Customizable{
 	
 	@Override
 	public String toString() {
-		String donutDetails = type + " " + DONUT + " | $" + doubleToDollar(this.itemPrice()) ;
+		String donutDetails = flavor + " " +type + " " + DONUT + " | $" + doubleToDollar(this.itemPrice()) ;
 		return donutDetails;
 	}
 	@Override

@@ -22,9 +22,11 @@ public class MainMenuController {
 	private ObservableList<MenuItem> currentOrderList, storeOrdersList;
 	
 	private ArrayList<Order> storeOrders = new ArrayList<Order>();
-	private ArrayList<Order> curOrder = new ArrayList<Order>();
+	private ArrayList<MenuItem> curOrder = new ArrayList<MenuItem>();
+	private int orderNum = 1;
 	
 	private final Stage mainStage;
+	
 	
 	/**
 	 * Using the FXML loader will let us have references between the main menu GUI the other GUIs
@@ -82,8 +84,8 @@ public class MainMenuController {
 	/**
 	 * The addOrder method adds a donut or coffee order to the current list of orders
 	 */
-	public void addOrder(String temp) {
-		System.out.println(temp);
+	public void addOrder() {
+		
 	}
 	
 	/**
@@ -99,5 +101,13 @@ public class MainMenuController {
 	 */
 	private void finalizeOrders() {
 		
+	}
+	/**
+	 * THe add menu item method adds a coffee or donut(s) to the list of menu items
+	 * this list will become an order once the user finalizes
+	 * @param item the donut or coffee to be added.
+	 */
+	public void addMenuItem(MenuItem item) {
+		curOrder.add(item);
 	}
 	}

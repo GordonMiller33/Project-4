@@ -37,7 +37,7 @@ public class OrderingDonutsController {
 	@FXML
 	private TextArea curOrderTextArea;
 	
-	private ArrayList<String> curOrder = new ArrayList<String>();
+	private ArrayList<Donut> curOrder = new ArrayList<Donut>();
 	
 	private final MainMenuController mainMenu;
 	
@@ -65,7 +65,7 @@ public class OrderingDonutsController {
 	private void initialize() {
 		placeDonutOrder.setOnAction(event -> addDonutOrder());
 		donutFlavorsView.getItems().addAll(donutFlavors);
-		donutTypeComboBox.getItems().addAll("Yeast", "Cake", "Mini dount");
+		donutTypeComboBox.getItems().addAll("Yeast", "Cake", "Mini Dount");
 		donutTypeComboBox.getSelectionModel().selectFirst();
 	}
 	
@@ -75,7 +75,8 @@ public class OrderingDonutsController {
 	
 	@FXML
 	void addDonutOrder() {
-		mainMenu.addOrder("Adding Order");
+		for(Donut donut : curOrder)
+		mainMenu.addMenuItem(null);
 		donutStage.hide();
 		//mainMenu.showStage();
 		
@@ -87,7 +88,7 @@ public class OrderingDonutsController {
 	void addDonut() {
 		String donutFlavor = donutFlavorsView.getSelectionModel().getSelectedItem();
 		String donutType = donutTypeComboBox.getSelectionModel().getSelectedItem().toString();
-		String donut = donutType + donutFlavor;
+		Donut donut = new Donut(donutFlavor, donutType, 1.99);
 		curOrder.add(donut);
 		curOrderTextArea.setText(curOrder.toString());
 		
