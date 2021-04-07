@@ -42,11 +42,11 @@ public class Donut extends MenuItem implements Customizable{
 	@Override
 	public double itemPrice() {
 		double findPrice = 0;
-		if(type.equals("Yeast"))
+		if(type.equalsIgnoreCase("Yeast"))
 			findPrice = YEASTPRICE;
-		if(type.equals("Cake"))
+		if(type.equalsIgnoreCase("Cake"))
 			findPrice = CAKEPRICE;
-		if(type.equals("Mini Donut"))
+		if(type.equalsIgnoreCase("Mini Donut"))
 			findPrice = MINIPRICE;
 		return findPrice;
 	}

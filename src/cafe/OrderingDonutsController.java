@@ -40,6 +40,7 @@ public class OrderingDonutsController {
 	private ArrayList<Donut> curOrder = new ArrayList<Donut>();
 	
 	private final MainMenuController mainMenu;
+	private final static double BASECOST = 1.39;
 	
 	private Stage donutStage;
 
@@ -65,7 +66,7 @@ public class OrderingDonutsController {
 	private void initialize() {
 		placeDonutOrder.setOnAction(event -> addDonutOrder());
 		donutFlavorsView.getItems().addAll(donutFlavors);
-		donutTypeComboBox.getItems().addAll("Yeast", "Cake", "Mini Dount");
+		donutTypeComboBox.getItems().addAll("Yeast", "Cake", "Mini Donut");
 		donutTypeComboBox.getSelectionModel().selectFirst();
 	}
 	
@@ -88,7 +89,7 @@ public class OrderingDonutsController {
 	void addDonut() {
 		String donutFlavor = donutFlavorsView.getSelectionModel().getSelectedItem();
 		String donutType = donutTypeComboBox.getSelectionModel().getSelectedItem().toString();
-		Donut donut = new Donut(donutFlavor, donutType, 1.99);
+		Donut donut = new Donut(donutFlavor, donutType, BASECOST);
 		curOrder.add(donut);
 		curOrderTextArea.setText(curOrder.toString());
 		
