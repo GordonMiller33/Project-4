@@ -52,7 +52,9 @@ public class MainMenuController {
 		mainStage.showAndWait();
 		
 	}
-	
+	/**
+	 * This method creates the necessary button associations on load
+	 */
 	@FXML
 	private void initialize() {
 		donutMenu.setOnAction(event -> showDonutMenu());
@@ -61,21 +63,30 @@ public class MainMenuController {
 		storeOrdersBtn.setOnAction(event -> showStoreOrderDetails());
 	}
 	
+	/**
+	 * This method will allow the donut ordering screen to load
+	 */
 	private void showDonutMenu() {
 		OrderingDonutsController donutController = new OrderingDonutsController(this);
 		donutController.setStage();
 	}
-	
+	/**
+	 * This method will allow the coffee ordering screen to load
+	 */
 	private void showCoffeeMenu() {
 		OrderingCoffeeController coffeeController = new OrderingCoffeeController(this);
 		coffeeController.setStage();
 	}
-	
+	/**
+	 * This method will allow the current order details screen to load
+	 */
 	private void showCurOrderDetails() {
 		CurrentOrderDetailController curOrderController = new CurrentOrderDetailController(this);
 		curOrderController.setStage();
 	}
-	
+	/**
+	 * This method will allow the store order details screen to load
+	 */
 	private void showStoreOrderDetails() {
 		StoreOrdersController storeOrderController = new StoreOrdersController(this);
 		storeOrderController.setStage();

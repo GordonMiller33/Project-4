@@ -65,7 +65,7 @@ public class OrderingCoffeeController {
 	
 	@FXML
 	private void initialize() {
-		addCoffeeBtn.setOnAction(event -> addCoffeeOrder());
+		addCoffeeBtn.setOnAction(event -> makeCoffee());
 	}
 	
 	public void setStage() {
@@ -126,14 +126,15 @@ public class OrderingCoffeeController {
 		String size = coffeeSizes.getSelectedToggle().toString();
 		double cost = calculateCost();
 		tempCoffee = new Coffee(size, cost, numCream, numSyrup, numMilk, numCaramel, numWhippedCream);
-		//addCoffeeOrder(tempCoffee);
-	}
-	
-	private void addCoffeeOrder() {
-		//List getAddIns = makeAddinList();
-		System.out.println("Add button pressed");
-		//mainMenu.addOrder("Coffee Added");
+		mainMenu.addMenuItem(tempCoffee);
 		coffeeStage.hide();
 	}
+	
+//	private void addCoffeeOrder() {
+//		//List getAddIns = makeAddinList();
+//		System.out.println("Add button pressed");
+//		//mainMenu.addOrder("Coffee Added");
+//		coffeeStage.hide();
+//	}
 
 }

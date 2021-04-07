@@ -61,7 +61,9 @@ public class OrderingDonutsController {
 		}
 		
 	}
-	
+	/**
+	 * This method sets up the necessary button relations for the donut controller
+	 */
 	@FXML
 	private void initialize() {
 		placeDonutOrder.setOnAction(event -> addDonutOrder());
@@ -69,7 +71,9 @@ public class OrderingDonutsController {
 		donutTypeComboBox.getItems().addAll("Yeast", "Cake", "Mini Donut");
 		donutTypeComboBox.getSelectionModel().selectFirst();
 	}
-	
+	/**
+	 * This method will show the donut ordering screen
+	 */
 	public void setStage() {
 		donutStage.showAndWait();
 	}
