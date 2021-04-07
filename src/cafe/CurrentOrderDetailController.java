@@ -15,7 +15,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
- * @author Me
+ * @author Matthew Schilling and Gordon Miller
  *
  */
 public class CurrentOrderDetailController {
@@ -43,6 +43,9 @@ public class CurrentOrderDetailController {
 		}
 		
 	}
+	/**
+	 * This method sets up the necessary relationships when this screen is loaded.
+	 */
 	@FXML
 	private void initialize() {
 		removeBtn.setOnAction(event -> removeItem());

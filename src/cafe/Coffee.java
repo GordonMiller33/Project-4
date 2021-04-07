@@ -4,7 +4,7 @@
 package cafe;
 
 /**
- * @author Me
+ * @author Matthew Schilling and Gordon Miller
  *
  */
 public class Coffee extends MenuItem implements Customizable{
@@ -35,6 +35,9 @@ public class Coffee extends MenuItem implements Customizable{
 		
 	}
 
+	/**
+	 * The add method will add addins
+	 */
 	@Override
 	public boolean add(Object obj) {
 		String addInType = (String)obj;
@@ -47,6 +50,9 @@ public class Coffee extends MenuItem implements Customizable{
 		return false;
 	}
 
+	/**
+	 * The remove method will remove addins
+	 */
 	@Override
 	public boolean remove(Object obj) {
 		String addInType = (String)obj;
@@ -58,7 +64,9 @@ public class Coffee extends MenuItem implements Customizable{
 		}
 		return false;
 	}
-	
+	/**
+	 * The to string method returns a string representation of the coffee
+	 */
 	@Override
 	public String toString() {
 		String coffeeDetails = size + " " + COFFEE + " | ";
@@ -70,7 +78,9 @@ public class Coffee extends MenuItem implements Customizable{
 		coffeeDetails+= " | $" + doubleToDollar(this.itemPrice());
 		return coffeeDetails;
 	}
-	
+	/**
+	 * The itemPrice method returns the price of the cofee
+	 */
 	@Override
 	public double itemPrice() {
 		double findPrice = sizePrice(this.size) + (ADDINCOST * numAddIns);
@@ -85,7 +95,11 @@ public class Coffee extends MenuItem implements Customizable{
 		}
 		return sum;
 	}
-	
+	/**
+	 * This method determines the price
+	 * @param size of the coffee
+	 * @return the price
+	 */
 	private static double sizePrice(String size) {
 		if(size.equals("Short")) {
 			return SHORTCOST;
@@ -100,7 +114,12 @@ public class Coffee extends MenuItem implements Customizable{
 			return VENTICOST;
 		}
 	}
-	
+	/**
+	 * this mehod finds the index of the addin to change
+	 * @param type the type of addin
+	 * @param names their names
+	 * @return the index of the item, or -1 if not found
+	 */
 	private static int findAddInIndex(String type, String[] names) {
 		for(int i=0; i<names.length; i++) 
 			if(type.equals(names[i]))
