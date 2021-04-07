@@ -14,7 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
- * @author Me
+ * @author Matthew Schilling and Gordon Miller
  *
  */
 public class CurrentOrderDetailController {
@@ -29,6 +29,10 @@ public class CurrentOrderDetailController {
     @FXML
     private ListView curOrderListView;
     
+    /**
+     * The constructor for the order detail controller 
+     * @param mainMenu a reference to the main menu controller
+     */
     public CurrentOrderDetailController(MainMenuController mainMenu) {
         this.mainMenu = mainMenu;
         curOrderDetailStage = new Stage();
@@ -45,6 +49,9 @@ public class CurrentOrderDetailController {
         }
         
     }
+    /**
+     * This method sets up our relationships
+     */
     @FXML
     private void initialize() {
         removeBtn.setOnAction(event -> removeItem());
@@ -56,6 +63,9 @@ public class CurrentOrderDetailController {
     public void setStage() {
         curOrderDetailStage.showAndWait();
     }
+    /**
+     * This method removes an order
+     */
     private void removeItem() {
         int index = curOrderListView.getSelectionModel().getSelectedIndex();
         mainMenu.curOrder.remove(index);

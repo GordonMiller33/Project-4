@@ -17,10 +17,18 @@ public class Order implements Customizable{
 	private int orderNumber;
 	
 
+	/**
+	 * The constructor for the order object
+	 * @param num the order number
+	 */
 	Order(int num) {
 		this.orderNumber = num;
 	}
 
+	/**
+	 * This method will add a menu item
+	 * return a boolean based on results
+	 */
 	@Override
 	public boolean add(Object obj) {
 		if(obj != null) {
@@ -30,6 +38,10 @@ public class Order implements Customizable{
 		return false;
 	}
 
+	/**
+	 * This method will remove a menu item
+	 * return a boolean based on results
+	 */
 	@Override
 	public boolean remove(Object obj) {
 		int itemIndex = itemList.indexOf((MenuItem)obj);
@@ -39,7 +51,9 @@ public class Order implements Customizable{
 		}
 		return false;
 	}
-	
+	/**
+	 * This method will return a formatted string representation
+	 */
 	@Override
 	public String toString() {
 		String output = "";

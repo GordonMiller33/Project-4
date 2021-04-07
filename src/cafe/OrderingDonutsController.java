@@ -1,6 +1,3 @@
-/**
- * 
- */
 package cafe;
 
 import java.io.IOException;
@@ -77,7 +74,9 @@ public class OrderingDonutsController {
 	public void setStage() {
 		donutStage.showAndWait();
 	}
-	
+	/**
+	 * This method adds the donuts the user selected to a reference in main menu
+	 */
 	@FXML
 	void addDonutOrder() {
 		for(Donut donut : curOrder)
