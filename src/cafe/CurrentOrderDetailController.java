@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package cafe;
 
@@ -19,20 +19,20 @@ import javafx.stage.Stage;
  */
 public class CurrentOrderDetailController {
 	private final MainMenuController mainMenu;
-	
+
 	private Stage curOrderDetailStage;
-	
+
 	@FXML
 	private ObservableList<Order> orderList;
 	@FXML
 	private Button removeBtn, placeOrderBtn;
 	@FXML
 	private ListView curOrderListView;
-	
+
 	public CurrentOrderDetailController(MainMenuController mainMenu) {
 		this.mainMenu = mainMenu;
 		curOrderDetailStage = new Stage();
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrderDetail.fxml"));
 			loader.setController(this);
@@ -43,15 +43,15 @@ public class CurrentOrderDetailController {
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	@FXML
 	private void initialize() {
 		removeBtn.setOnAction(event -> removeItem());
 		placeOrderBtn.setOnAction(event -> placeOrder());
 	}
-	
+
 	/**
 	 * The setStage method will display the order detail window
 	 */
@@ -63,7 +63,7 @@ public class CurrentOrderDetailController {
 		mainMenu.curOrder.remove(index);
 		curOrderListView.getItems().remove(index);
 	}
-	
+
 	private void placeOrder() {
 		mainMenu.placeOrder();
 		curOrderDetailStage.hide();

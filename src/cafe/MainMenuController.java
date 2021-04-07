@@ -13,37 +13,37 @@ import javafx.stage.Stage;
 public class MainMenuController {
 	private final static int CURRENT_ORDER = 0;
 	private int orderId = 0;
-	
+
 	@FXML
     private Button donutMenu, coffeeMenu, currentOrderBtn, storeOrdersBtn;
-	
+
 	@FXML
 	private ListView<String> userOrderView, allOrdersView;
-	
+
 	@FXML
 	private ObservableList<MenuItem> currentOrderList;
 	@FXML
 	ObservableList<MenuItem> storeOrdersList;
-	
+
 	protected ArrayList<Order> storeOrders = new ArrayList<Order>();
 	protected Order curOrder = new Order(CURRENT_ORDER);
 	private int orderNum = 1;
-	
+
 	private final Stage mainStage;
-	
-	
+
+
 	/**
 	 * Using the FXML loader will let us have references between the main menu GUI the other GUIs
 	 */
 	public MainMenuController() {
 		mainStage = new Stage();
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
 			loader.setController(this);
 			mainStage.setScene(new Scene(loader.load()));
 			mainStage.setTitle("Welcome to RU Cafe!");
-			
+
 		}catch (IOException e) {
             e.printStackTrace();
 	}
@@ -54,7 +54,7 @@ public class MainMenuController {
 	 */
 	public void showStage() {
 		mainStage.showAndWait();
-		
+
 	}
 	/**
 	 * This method creates the necessary button associations on load
@@ -66,7 +66,7 @@ public class MainMenuController {
 		currentOrderBtn.setOnAction(event -> showCurOrderDetails());
 		storeOrdersBtn.setOnAction(event -> showStoreOrderDetails());
 	}
-	
+
 	/**
 	 * This method will allow the donut ordering screen to load
 	 */
@@ -95,27 +95,27 @@ public class MainMenuController {
 		StoreOrdersController storeOrderController = new StoreOrdersController(this);
 		storeOrderController.setStage();
 	}
-	
+
 	/**
 	 * The addOrder method adds a donut or coffee order to the current list of orders
 	 */
 	public void addOrder() {
-		
+
 	}
-	
+
 	/**
 	 * The removeOrder method removes a selected order from the current list of orders
 	 */
 	public void removeOrder() {
-		
+
 	}
-	
+
 	/**
 	 * The finalizeOrders method adds the current list of orders as a new object to the list
 	 * of all cafe orders.
 	 */
 	private void finalizeOrders() {
-		
+
 	}
 	/**
 	 * THe add menu item method adds a coffee or donut(s) to the list of menu items
